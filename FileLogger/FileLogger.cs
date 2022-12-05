@@ -15,7 +15,7 @@ namespace FileLogger
         {
             this._loggerConfiguration = loggerConfiguration;
         }
-
+        
         public LoggerConfiguration LoggerConfiguration
         {
             get
@@ -28,7 +28,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                Console.WriteLine("Could not log, path is not accessible");
 
                 return;
             }
