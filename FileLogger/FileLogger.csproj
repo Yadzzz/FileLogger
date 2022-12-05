@@ -12,19 +12,11 @@
     <Company>FileLogger</Company>
     <Description>Simple File Logger to log information, warnings and errors to file.</Description>
     <PackageProjectUrl>
-      Länk till projektwebbsida eller Github
-
+      https://github.com/Yadzzz/FileLogger
     </PackageProjectUrl>
 
-    <RepositoryUrl>Länk till Github</RepositoryUrl>
-    <PackageTags>Taggar separerade med semicolon</PackageTags>
-    <ApplicationIcon>
-      .ico fil som representerar ditt
-
-      projekt
-    </ApplicationIcon>
-
-    <PackageIcon>.png fil som representerar ditt projekt</PackageIcon>
+    <RepositoryUrl>https://github.com/Yadzzz/FileLogger</RepositoryUrl>
+    <PackageTags>filelogger,file,logger,logging,c#,asp.net</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
