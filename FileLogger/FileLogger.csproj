@@ -10,7 +10,7 @@
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <Authors>Yad</Authors>
     <Company>FileLogger</Company>
-    <Description>Simple File Logger to log information, warnings and errors to file.</Description>
+    <Description>Simple File Logger to log information, warnings and errors to file. </Description>
     <PackageProjectUrl>
       https://github.com/Yadzzz/FileLogger
     </PackageProjectUrl>
