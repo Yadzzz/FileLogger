@@ -12,35 +12,74 @@ namespace FileLogger
         private string _fileLocation;
         private LoggingType _loggingType;
 
-        public LoggerConfiguration(string fileLocation, LoggingType loggingType)
+        public LoggerConfiguration(string fileLocation, LoggingType loggingType, bool logToCurrentDirectory = true)
         {
-            this._fileLocation = Environment.CurrentDirectory +  @"\" + fileLocation;
+            if (logToCurrentDirectory)
+            {
+                this._fileLocation = Path.Combine(Environment.CurrentDirectory, fileLocation);
+            }
+            else
+            {
+                this._fileLocation = fileLocation;
+            }
+
             this._loggingType = loggingType;
 
             if (loggingType == LoggingType.File)
             {
                 if(!fileLocation.EndsWith(".txt"))
                 {
-                    Console.WriteLine("The logger only supports .txt files.");
+                    WriteToBaseFile("The logger only supports .txt files.");
                     return;
                 }
 
                 if(this.TryCreateFile())
                 {
-                    Console.WriteLine("File created successfully.");
+                    WriteToBaseFile("File created successfully.");
                 }
                 else
                 {
-                    Console.WriteLine("Could not create file at path.");
+                    WriteToBaseFile("Could not create file at path.");
                 }
             }
         }
 
+        /// <summary>
+        /// Writes to base file in current directory
+        /// </summary>
+        /// <param name="message"></param>
+        public void WriteToBaseFile(string message)
+        {
+            string baseLocation = Path.Combine(Environment.CurrentDirectory, "basefile.txt");
+
+            if (!File.Exists(baseLocation))
+            {
+                using (FileStream fileStream = new FileStream(baseLocation, FileMode.Create))
+                {
+
+                }
+            }
+
+            using (var writer = new StreamWriter(baseLocation, true))
+            {
+                writer.WriteLine("[" + DateTime.Now + "] [INF] " + message);
+            }
+        }
+
+        /// <summary>
+        /// Creates a streamwriter
+        /// </summary>
+        /// <returns>Streamwriter based on given path</returns>
         public StreamWriter GetStreamWriter()
         {
             return new StreamWriter(this._fileLocation, true);
         }
 
+
+        /// <summary>
+        /// Tries to create file based on given path if file does not exists
+        /// </summary>
+        /// <returns></returns>
         private bool TryCreateFile()
         {
             if (this.PathExists())
@@ -67,6 +106,10 @@ namespace FileLogger
             return true;
         }
 
+        /// <summary>
+        /// Checks if given path exists
+        /// </summary>
+        /// <returns></returns>
         public bool PathExists()
         {
             if (File.Exists(this._fileLocation))
@@ -77,6 +120,9 @@ namespace FileLogger
             return false;
         }
 
+        /// <summary>
+        /// File Location
+        /// </summary>
         public string FileLocation
         {
             get

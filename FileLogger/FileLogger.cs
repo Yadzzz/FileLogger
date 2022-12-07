@@ -14,6 +14,8 @@ namespace FileLogger
         public FileLogger(LoggerConfiguration loggerConfiguration)
         {
             this._loggerConfiguration = loggerConfiguration;
+
+            this.Log("Logger Initialized.");
         }
         
         public LoggerConfiguration LoggerConfiguration
@@ -28,7 +30,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible...");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible...");
 
                 return;
             }
@@ -46,7 +48,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -61,7 +63,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -79,7 +81,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -94,7 +96,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -113,7 +115,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -129,7 +131,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -147,7 +149,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -162,7 +164,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }
@@ -180,7 +182,7 @@ namespace FileLogger
         {
             if (!this._loggerConfiguration.PathExists())
             {
-                Console.WriteLine("Could not log, path is not accessible.");
+                this._loggerConfiguration.WriteToBaseFile("Could not log, path is not accessible.");
 
                 return;
             }

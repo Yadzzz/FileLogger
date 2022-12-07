@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <OutputType>Library</OutputType>
 
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.3</Version>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <Authors>Yad</Authors>
     <Company>FileLogger</Company>
@@ -17,7 +17,17 @@
 
     <RepositoryUrl>https://github.com/Yadzzz/FileLogger</RepositoryUrl>
     <PackageTags>filelogger,file,logger,logging,c#,asp.net</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>SimpleFILELoggerNetCore</PackageId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
